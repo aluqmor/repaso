@@ -11,8 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const textarea = document.createElement('textarea'); 
             textarea.textContent = contenido; // le añado el contenido del parrafo al textarea
 
+            // creo el boton de aceptar
+            const aceptar = document.createElement('button');
+            aceptar.textContent = 'Aceptar';
+
+            aceptar.addEventListener('click', () => {
+                parrafo.innerHTML = textarea.value; // cambio el contenido del parrafo por el contenido del textarea
+            });
+
             parrafo.innerHTML = ''; // borro el contenido del parrafo
             parrafo.appendChild(textarea); // añado el textarea al parrafo
+            parrafo.appendChild(aceptar); // añado el boton de aceptar
         }); 
     });
 });
