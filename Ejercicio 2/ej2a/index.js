@@ -6,5 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const editar = document.createElement('button'); // creo el boton
         editar.textContent = 'Editar';
         parrafo.appendChild(editar); // lo añado al final del parrafo
+        editar.addEventListener('click', () => {
+            const contenido = parrafo.textContent; // almaceno el contenido del parrafo
+            const textarea = document.createElement('textarea'); 
+            textarea.textContent = contenido; // le añado el contenido del parrafo al textarea
+
+            parrafo.innerHTML = ''; // borro el contenido del parrafo
+            parrafo.appendChild(textarea); // añado el textarea al parrafo
+        }); 
     });
 });
